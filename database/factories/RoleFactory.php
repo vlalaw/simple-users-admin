@@ -1,0 +1,64 @@
+<?php
+
+namespace Database\Factories;
+
+use App\Models\Role;
+use Illuminate\Database\Eloquent\Factories\Factory;
+
+class RoleFactory extends Factory
+{
+    /**
+     * The name of the factory's corresponding model.
+     *
+     * @var string
+     */
+    protected $model = Role::class;
+
+    /**
+     * Define the model's default state.
+     *
+     * @return array
+     */
+    public function definition()
+    {
+        return [
+            'name' => $this->faker->randomElement(['admin', 'editor', 'viewer']),
+        ];
+    }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Factories\Factory
+     */
+    public function admin()
+    {
+        return $this->state(function () {
+            return [
+                'name' => 'admin',
+            ];
+        });
+    }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Factories\Factory
+     */
+    public function editor()
+    {
+        return $this->state(function () {
+            return [
+                'name' => 'editor',
+            ];
+        });
+    }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Factories\Factory
+     */
+    public function viewer()
+    {
+        return $this->state(function () {
+            return [
+                'name' => 'viewer',
+            ];
+        });
+    }
+}
