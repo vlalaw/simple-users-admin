@@ -10,10 +10,7 @@ use Illuminate\Foundation\Testing\RefreshDatabase;
 class UsersTest extends TestCase
 {
     use RefreshDatabase;
-
-    /**
-     *
-     */
+    
     public function test_it_shows_user_edit_form()
     {
         $user = User::factory()->create();
